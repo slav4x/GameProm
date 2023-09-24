@@ -36,3 +36,42 @@ input
   margin: 0 auto
   position: relative
   z-index: 5
+
+.btn-wrap
+  @include flexbox
+  align-items: center
+
+.btn
+  @include flexbox
+  align-items: center
+  max-width: 470px
+  width: 100%
+  height: 100px
+  border-radius: 99px
+  padding: 8px 8px 8px 56px
+  b
+    display: block
+    font-weight: 500
+    text-transform: uppercase
+    font-size: 24px
+    margin: 0 auto
+  &::after
+    content: ''
+    display: block
+    width: 84px
+    height: 84px
+    border-radius: 100%
+    background-repeat: no-repeat
+    background-position: center
+  &-white
+    background: #fff
+    color: var(--color-black)
+    &::after
+      background-color: var(--color-green)
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1326' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1326)'%3E%3Cpath d='M8.72183 24.6219L6.2334 22.1334L18.6001 9.7668H7.75517V6.2334H24.6219V23.1001H21.0885V12.2552L8.72183 24.6219Z' fill='%231F1F1F'/%3E%3C/g%3E%3C/svg%3E%0A")
+  &-green
+    background: var(--color-green)
+    color: var(--color-black)
+    &::after
+      background-color: var(--color-black)
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1326' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1326)'%3E%3Cpath d='M8.72183 24.6219L6.2334 22.1334L18.6001 9.7668H7.75517V6.2334H24.6219V23.1001H21.0885V12.2552L8.72183 24.6219Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A")
