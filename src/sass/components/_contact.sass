@@ -1,0 +1,35 @@
+.contact
+  padding: 80px 0
+  .container
+    @include flexbox
+    align-items: center
+  &-logo
+    width: calc(100% - 980px)
+  &-content
+    max-width: 960px
+    margin-left: auto
+  &-social
+    @include flexbox
+    align-items: center
+    gap: 16px
+    margin-bottom: 40px
+    li
+      a
+        @include flexbox
+        align-items: center
+        justify-content: center
+        width: 60px
+        height: 60px
+        background: var(--color-green)
+        border-radius: 100%
+  &-title
+    font-size: 30px
+    font-weight: 400
+    font-family: 'Labor Union'
+    margin-bottom: 8px
+  &-email
+    font-size: 72px
+    font-weight: 400
+    font-family: 'Labor Union'
+    span
+      font-family: 'Unbounded'
