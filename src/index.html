@@ -46,4 +46,33 @@
   </div>
 </section>
 
+<section class="projects">
+  <div class="container">
+    <div class="projects-head">
+      <h2 class="title">Наши проекты</h2>
+      <a href="#" class="btn btn-green"><b>Все проекты</b></a>
+    </div>
+    <ul class="tabs">
+      <li class="active"><a href="javascript:;">Все</a></li>
+      <li><a href="javascript:;">Приложения</a></li>
+      <li><a href="javascript:;">Игры</a></li>
+    </ul>
+    <div class="splide projects-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="control">
+      <div class="control-arrow projects-prev"></div>
+      <div class="control-progress"><div class="control-progress__bar projects-bar"></div></div>
+      <div class="control-arrow projects-next"></div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

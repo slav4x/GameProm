@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dragToClose: false,
     autoFocus: false,
     placeFocusBack: false,
+    Thumbs: false,
   });
 
   const sliderClasses = ['.company-slider-1', '.company-slider-2'];
@@ -59,4 +60,35 @@ document.addEventListener('DOMContentLoaded', function () {
       companySlider.mount(window.splide.Extensions);
     }
   });
+
+  if (document.querySelector('.projects-slider')) {
+    const projectsArrowNext = document.querySelector('.projects-next');
+    const projectsArrowPrev = document.querySelector('.projects-prev');
+    const projectsBar = document.querySelector('.projects-bar');
+
+    const projectsSlider = new Splide('.projects-slider', {
+      type: 'loop',
+      perPage: 2,
+      perMove: 1,
+      pagination: false,
+      arrows: false,
+      gap: 30,
+    });
+
+    projectsArrowNext.addEventListener('click', (e) => {
+      projectsSlider.go('+1');
+    });
+
+    projectsArrowPrev.addEventListener('click', (e) => {
+      projectsSlider.go('-1');
+    });
+
+    projectsSlider.on('mounted move', function () {
+      const end = projectsSlider.Components.Controller.getEnd() + 1;
+      const rate = Math.min((projectsSlider.index + 1) / end, 1);
+      projectsBar.style.width = String(100 * rate) + '%';
+    });
+
+    projectsSlider.mount();
+  }
 });
