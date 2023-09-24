@@ -33,4 +33,30 @@ document.addEventListener('DOMContentLoaded', function () {
     autoFocus: false,
     placeFocusBack: false,
   });
+
+  const sliderClasses = ['.company-slider-1', '.company-slider-2'];
+
+  sliderClasses.forEach((sliderClass) => {
+    const sliderElement = document.querySelector(sliderClass);
+
+    if (sliderElement) {
+      const companySlider = new Splide(sliderClass, {
+        type: 'loop',
+        rewind: false,
+        direction: 'ttb',
+        pagination: false,
+        arrows: false,
+        pauseOnHover: false,
+        autoHeight: true,
+        height: '100%',
+        gap: 24,
+        center: true,
+        autoScroll: {
+          speed: 0.5,
+        },
+      });
+
+      companySlider.mount(window.splide.Extensions);
+    }
+  });
 });
