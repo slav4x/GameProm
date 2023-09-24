@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   if (document.querySelector('.projects-slider')) {
-    const projectsArrowNext = document.querySelector('.projects-next');
-    const projectsArrowPrev = document.querySelector('.projects-prev');
-    const projectsBar = document.querySelector('.projects-bar');
+    const arrowNext = document.querySelector('.projects-next');
+    const arrowPrev = document.querySelector('.projects-prev');
+    const bar = document.querySelector('.projects-bar');
 
     const projectsSlider = new Splide('.projects-slider', {
       type: 'loop',
@@ -75,20 +75,51 @@ document.addEventListener('DOMContentLoaded', function () {
       gap: 30,
     });
 
-    projectsArrowNext.addEventListener('click', (e) => {
+    arrowNext.addEventListener('click', (e) => {
       projectsSlider.go('+1');
     });
 
-    projectsArrowPrev.addEventListener('click', (e) => {
+    arrowPrev.addEventListener('click', (e) => {
       projectsSlider.go('-1');
     });
 
     projectsSlider.on('mounted move', function () {
       const end = projectsSlider.Components.Controller.getEnd() + 1;
       const rate = Math.min((projectsSlider.index + 1) / end, 1);
-      projectsBar.style.width = String(100 * rate) + '%';
+      bar.style.width = String(100 * rate) + '%';
     });
 
     projectsSlider.mount();
+  }
+
+  if (document.querySelector('.media-slider')) {
+    const arrowNext = document.querySelector('.media-next');
+    const arrowPrev = document.querySelector('.media-prev');
+    const bar = document.querySelector('.media-bar');
+
+    const mediaSlider = new Splide('.media-slider', {
+      type: 'loop',
+      perPage: 3,
+      perMove: 1,
+      pagination: false,
+      arrows: false,
+      gap: 30,
+    });
+
+    arrowNext.addEventListener('click', (e) => {
+      mediaSlider.go('+1');
+    });
+
+    arrowPrev.addEventListener('click', (e) => {
+      mediaSlider.go('-1');
+    });
+
+    mediaSlider.on('mounted move', function () {
+      const end = mediaSlider.Components.Controller.getEnd() + 1;
+      const rate = Math.min((mediaSlider.index + 1) / end, 1);
+      bar.style.width = String(100 * rate) + '%';
+    });
+
+    mediaSlider.mount();
   }
 });

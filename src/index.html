@@ -75,4 +75,33 @@
   </div>
 </section>
 
+<section class="media">
+  <div class="container">
+    <div class="media-head">
+      <div class="media-head__text">
+        <h2 class="title">Медиа-банк</h2>
+        <h3 class="subtitle">С выставок и мероприятий</h3>
+      </div>
+      <a href="#" class="btn btn-black"><b>Все медиа</b></a>
+    </div>
+    <div class="splide media-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/media-item.html' %}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="control control-black">
+      <div class="control-arrow media-prev"></div>
+      <div class="control-progress"><div class="control-progress__bar media-bar"></div></div>
+      <div class="control-arrow media-next"></div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
