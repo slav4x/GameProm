@@ -134,3 +134,26 @@ input
       padding-left: 0
       &::before
         display: none
+
+.control
+  @include flexbox
+  align-items: center
+  justify-content: center
+  &-arrow
+    width: 60px
+    height: 60px
+    border-radius: 100%
+    background: var(--color-green) url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1430' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1430)'%3E%3Cpath d='M8.60221 13.325L13.8913 18.6141L12 20.4804L3.51953 12L12 3.51953L13.8913 5.38586L8.60221 10.675H20.4804V13.325H8.60221Z' fill='%231F1F1F'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat center
+    cursor: pointer
+    &:last-child
+      transform: rotate(180deg)
+  &-progress
+    width: 240px
+    height: 10px
+    background: rgba(255,255,255,.05)
+    margin: 0 -1px
+    &__bar
+      height: 100%
+      transition: width .25s
+      width: 0
+      background: var(--color-green)
