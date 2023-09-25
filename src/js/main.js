@@ -122,4 +122,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mediaSlider.mount();
   }
+
+  if (document.querySelector('.media-single__slider')) {
+    const arrowNext = document.querySelector('.media-single-next');
+    const arrowPrev = document.querySelector('.media-single-prev');
+    const bar = document.querySelector('.media-single-bar');
+
+    const mediaSingleSlider = new Splide('.media-single__slider', {
+      type: 'loop',
+      pagination: false,
+      arrows: false,
+      autoScroll: false,
+      gap: 30,
+      grid: {
+        rows: 3,
+        cols: 3,
+        gap: {
+          row: 30,
+          col: 30,
+        },
+      },
+    });
+
+    arrowNext.addEventListener('click', (e) => {
+      mediaSingleSlider.go('+1');
+    });
+
+    arrowPrev.addEventListener('click', (e) => {
+      mediaSingleSlider.go('-1');
+    });
+
+    mediaSingleSlider.on('mounted move', function () {
+      const end = mediaSingleSlider.Components.Controller.getEnd() + 1;
+      const rate = Math.min((mediaSingleSlider.index + 1) / end, 1);
+      bar.style.width = String(100 * rate) + '%';
+    });
+
+    mediaSingleSlider.mount(window.splide.Extensions);
+  }
+
+  document.querySelectorAll('.media-single__slider a[data-fancybox="video"]').forEach(function (item) {
+    const video = item.getAttribute('href');
+    const videoID = video.match(/^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+    item.querySelector('img').setAttribute('src', 'https://i.ytimg.com/vi/' + videoID[2] + '/sd1.jpg');
+  });
 });

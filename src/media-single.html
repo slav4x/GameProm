@@ -1,0 +1,60 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Страница медиа' %}
+
+{% block content %}
+
+<section class="media-single">
+  <div class="container">
+    {% include 'components/_header.html' %}
+    <h2 class="title">Название игровой выставки</h2>
+    <ul class="tabs">
+      <li class="active"><a href="javascript:;">Все</a></li>
+      <li><a href="javascript:;">Фото</a></li>
+      <li><a href="javascript:;">Видео</a></li>
+    </ul>
+    <div class="splide media-single__slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=IS0SItAzEXg" data-fancybox="video"><img src="" alt="" loading="lazy"></a></li>
+          <li class="splide__slide"><a href="img/media-item.jpg" data-fancybox="photo"><img src="img/media-item.jpg" alt="" loading="lazy"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="control">
+      <div class="control-arrow media-single-prev"></div>
+      <div class="control-progress"><div class="control-progress__bar media-single-bar"></div></div>
+      <div class="control-arrow media-single-next"></div>
+    </div>
+  </div>
+</section>
+
+<section class="media-events">
+  <div class="container">
+    <h2 class="title">Похожие мероприятия</h2>
+    <div class="media-grid">
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+    </div>
+  </div>
+</section>
+
+{% include 'components/subscribe.html' %}
+
+{% endblock %}
