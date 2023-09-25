@@ -1,0 +1,33 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Медиа' %}
+
+{% block content %}
+
+<section class="media-page">
+  <div class="container">
+    {% include 'components/_header.html' %}
+    <h2 class="title">Фото и видео</h2>
+    <div class="media-grid">
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+      {% include 'components/media-item.html' %}
+    </div>
+    <div class="control control-black">
+      <a href="#!" class="control-arrow disabled"></a>
+      <div class="control-progress"><div class="control-progress__bar" width="0"></div></div>
+      <a href="#" class="control-arrow"></a>
+    </div>
+  </div>
+</section>
+
+{% include 'components/feedback.html' %}
+
+{% include 'components/subscribe.html' %}
+
+{% endblock %}
