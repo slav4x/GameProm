@@ -122,10 +122,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mediaSlider.mount();
   }
-
-  document.querySelectorAll('.media-content a[data-fancybox="video"]').forEach(function (item) {
-    const video = item.getAttribute('href');
-    const videoID = video.match(/^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
-    item.querySelector('img').setAttribute('src', 'https://i.ytimg.com/vi/' + videoID[2] + '/sd1.jpg');
-  });
 });
