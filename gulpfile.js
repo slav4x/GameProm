@@ -80,6 +80,7 @@ const libs_js = () => {
     'src/js/vendor/imask.min.js',
     'src/js/vendor/splide.min.js',
     'src/js/vendor/splide-extension-auto-scroll.min.js',
+    'src/js/vendor/splide-extension-grid.min.js',
   ])
     .pipe(isMinify ? uglify() : noop())
     .pipe(isMinify ? concat('libs.min.js') : concat('libs.js'))
