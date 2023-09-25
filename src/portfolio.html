@@ -1,0 +1,20 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Портфолио' %}
+
+{% block content %}
+
+<section class="portfolio">
+  <div class="container">
+    {% include 'components/_header.html' %}
+    <h2 class="title">Портфолио</h2>
+    <ul class="tabs">
+      <li class="active"><a href="javascript:;">Все</a></li>
+      <li><a href="javascript:;">Приложения</a></li>
+      <li><a href="javascript:;">Игры</a></li>
+    </ul>
+  </div>
+</section>
+
+{% include 'components/feedback.html' %}
+
+{% endblock %}
