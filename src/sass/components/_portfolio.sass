@@ -202,3 +202,24 @@
           object-fit: cover
           object-position: center
           border-radius: 35px
+
+  &-download
+    padding: 80px 0
+    background: #1a1a1a
+    color: var(--color-white)
+    overflow: hidden
+    &__content
+      max-width: 670px
+      p
+        margin-top: 16px
+        font-size: 18px
+        line-height: 1.75
+    &__links
+      margin-top: 32px
+      @include flexbox
+      align-items: center
+      gap: 48px
+    &__image
+      position: absolute
+      top: -80px
+      left: 710px
