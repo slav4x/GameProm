@@ -7,6 +7,10 @@
     display: grid
     grid-template-columns: repeat(2, 1fr)
     gap: 40px 30px
+    li:nth-child(n+5)
+      display: none
+    &.full li:nth-child(n+5)
+      display: block
   .btn-wrap
     justify-content: center
   &-item
