@@ -123,4 +123,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mediaSlider.mount();
   }
+
+  const tabs = document.querySelectorAll('.media-tabs li');
+  const contentItems = document.querySelectorAll('.media-content li');
+
+  function showAllContent() {
+    const mediaContent = document.querySelector('.media-content');
+    const btnMore = document.querySelector('.btn-more');
+
+    mediaContent.style.maxHeight = 'initial';
+    btnMore.parentNode.style.display = 'none';
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', function () {
+      const category = this.getAttribute('data-category');
+
+      tabs.forEach((tab) => tab.classList.remove('active'));
+      this.classList.add('active');
+
+      contentItems.forEach((item) => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  const btnMore = document.querySelector('.btn-more');
+  btnMore.addEventListener('click', showAllContent);
 });
