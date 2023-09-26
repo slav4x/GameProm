@@ -8,19 +8,21 @@
     {% include 'components/_header.html' %}
     <h2 class="title">Портфолио</h2>
     <ul class="tabs">
-      <li class="active"><a href="javascript:;">Все</a></li>
-      <li><a href="javascript:;">Приложения</a></li>
-      <li><a href="javascript:;">Игры</a></li>
+      <li class="active" data-category="all"><a href="javascript:;">Все</a></li>
+      <li data-category="app"><a href="javascript:;">Приложения</a></li>
+      <li data-category="game"><a href="javascript:;">Игры</a></li>
     </ul>
-    <div class="portfolio-content">
+    <ul class="portfolio-content content">
       {% include 'components/portfolio-item.html' %}
       {% include 'components/portfolio-item.html' %}
       {% include 'components/portfolio-item.html' %}
       {% include 'components/portfolio-item.html' %}
       {% include 'components/portfolio-item.html' %}
       {% include 'components/portfolio-item.html' %}
-    </div>
-    <div class="btn-wrap"><a href="#" class="btn btn-black btn-more"><b>Показать еще</b></a></div>
+      {% include 'components/portfolio-item.html' %}
+      {% include 'components/portfolio-item.html' %}
+    </ul>
+    <div class="btn-wrap"><a href="javascript:;" class="btn btn-black btn-more"><b>Показать еще</b></a></div>
   </div>
 </section>
 
