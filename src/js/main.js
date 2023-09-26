@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pagination: false,
       arrows: false,
       gap: 30,
+      focus: 'center',
     });
 
     arrowNext.addEventListener('click', (e) => {
