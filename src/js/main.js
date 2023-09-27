@@ -188,4 +188,14 @@ document.addEventListener('DOMContentLoaded', function () {
       btnWrap.style.display = 'none';
     });
   }
+
+  if (document.querySelector('.media-page')) {
+    const content = document.querySelector('.media-grid');
+    const btnWrap = document.querySelector('.btn-wrap');
+
+    btnWrap.addEventListener('click', function () {
+      content.classList.add('full');
+      btnWrap.style.display = 'none';
+    });
+  }
 });

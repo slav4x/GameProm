@@ -62,6 +62,11 @@
     padding-bottom: 80px
     .btn-wrap
       justify-content: center
+    .media-grid
+      .media-item:nth-child(n+10)
+        display: none
+      &.full .media-item:nth-child(n+10)
+        display: block
   &-grid
     display: grid
     grid-template-columns: repeat(3, 1fr)
