@@ -155,37 +155,37 @@ document.addEventListener('DOMContentLoaded', function () {
     burger.classList.toggle('open');
     nav.classList.toggle('open');
   });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelector('.tabs-switch');
-  const contentItems = document.querySelector('.content');
-  const btnWrap = document.querySelector('.btn-wrap');
+  if (document.querySelector('.tabs-switch')) {
+    const tabs = document.querySelector('.tabs-switch');
+    const contentItems = document.querySelector('.content');
+    const btnWrap = document.querySelector('.btn-wrap');
 
-  function showCategory(category) {
-    contentItems.querySelectorAll('li').forEach((item) => {
-      const itemCategory = item.dataset.category;
-      item.classList.toggle('hidden', category !== 'all' && itemCategory !== category);
+    function showCategory(category) {
+      contentItems.querySelectorAll('li').forEach((item) => {
+        const itemCategory = item.dataset.category;
+        item.classList.toggle('hidden', category !== 'all' && itemCategory !== category);
+      });
+    }
+
+    tabs.addEventListener('click', function (event) {
+      const tab = event.target.closest('li');
+      if (!tab) return;
+
+      const category = tab.dataset.category;
+
+      tabs.querySelectorAll('li').forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      showCategory(category);
+
+      contentItems.classList.add('full');
+      btnWrap.style.display = 'none';
+    });
+
+    btnWrap.addEventListener('click', function () {
+      contentItems.classList.add('full');
+      btnWrap.style.display = 'none';
     });
   }
-
-  tabs.addEventListener('click', function (event) {
-    const tab = event.target.closest('li');
-    if (!tab) return;
-
-    const category = tab.dataset.category;
-
-    tabs.querySelectorAll('li').forEach((t) => t.classList.remove('active'));
-    tab.classList.add('active');
-
-    showCategory(category);
-
-    contentItems.classList.add('full');
-    btnWrap.style.display = 'none';
-  });
-
-  btnWrap.addEventListener('click', function () {
-    contentItems.classList.add('full');
-    btnWrap.style.display = 'none';
-  });
 });
