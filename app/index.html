@@ -9,8 +9,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Главная</title>
-    <link rel="stylesheet" href="./css/libs.min.css?cb=1695833161006">
-    <link rel="stylesheet" href="./css/main.min.css?cb=1695833161006">
+    <link rel="stylesheet" href="./css/libs.min.css?cb=1695840415290">
+    <link rel="stylesheet" href="./css/main.min.css?cb=1695840415290">
   </head>
   <body>
 
@@ -101,15 +101,15 @@
       <h2 class="title">Наши проекты</h2>
       <a href="#" class="btn btn-white"><b>Все проекты</b></a>
     </div>
-    <ul class="tabs">
-      <li class="active"><a href="javascript:;">Все</a></li>
-      <li><a href="javascript:;">Приложения</a></li>
-      <li><a href="javascript:;">Игры</a></li>
+    <ul class="tabs projects-tabs">
+      <li class="active" data-category="all"><a href="javascript:;">Все</a></li>
+      <li data-category="app"><a href="javascript:;">Приложения</a></li>
+      <li data-category="game"><a href="javascript:;">Игры</a></li>
     </ul>
     <div class="splide projects-slider">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide"><div class="projects-item">
+          <li class="splide__slide" data-category="app"><div class="projects-item">
   <ul class="projects-item__gallery">
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
@@ -124,7 +124,7 @@
     <p><b>Платформа:</b> Steam, Mobile-app</p>
   </div>
 </div></li>
-          <li class="splide__slide"><div class="projects-item">
+          <li class="splide__slide" data-category="app"><div class="projects-item">
   <ul class="projects-item__gallery">
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
@@ -139,13 +139,13 @@
     <p><b>Платформа:</b> Steam, Mobile-app</p>
   </div>
 </div></li>
-          <li class="splide__slide"><div class="projects-item">
+          <li class="splide__slide" data-category="game"><div class="projects-item">
   <ul class="projects-item__gallery">
-    <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
-    <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
-    <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
-    <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
-    <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
   </ul>
   <div class="projects-item__date">Дата выхода: 17 янв. 2023</div>
   <a href="#" class="projects-item__title">Argy Bargy Legends</a>
@@ -154,7 +154,22 @@
     <p><b>Платформа:</b> Steam, Mobile-app</p>
   </div>
 </div></li>
-          <li class="splide__slide"><div class="projects-item">
+          <li class="splide__slide" data-category="game"><div class="projects-item">
+  <ul class="projects-item__gallery">
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+    <li><a href="img/company-slide-3.jpg" data-fancybox="project-1"><img src="img/company-slide-3.jpg" alt="" loading="lazy"></a></li>
+  </ul>
+  <div class="projects-item__date">Дата выхода: 17 янв. 2023</div>
+  <a href="#" class="projects-item__title">Argy Bargy Legends</a>
+  <div class="projects-item__text">
+    <p>Коллекционная карточная игра о противостоянии трех фракций: желудей, поплавков и свечей.</p>
+    <p><b>Платформа:</b> Steam, Mobile-app</p>
+  </div>
+</div></li>
+          <li class="splide__slide" data-category="app"><div class="projects-item">
   <ul class="projects-item__gallery">
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
     <li><a href="img/projects-item.jpg" data-fancybox="project-1"><img src="img/projects-item.jpg" alt="" loading="lazy"></a></li>
@@ -327,7 +342,7 @@
 </footer>
     </div>
 
-    <script src="./js/libs.min.js?cb=1695833161006"></script>
-    <script src="./js/main.min.js?cb=1695833161006"></script>
+    <script src="./js/libs.min.js?cb=1695840415290"></script>
+    <script src="./js/main.min.js?cb=1695840415290"></script>
   </body>
 </html>

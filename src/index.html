@@ -60,18 +60,19 @@
       <h2 class="title">Наши проекты</h2>
       <a href="#" class="btn btn-white"><b>Все проекты</b></a>
     </div>
-    <ul class="tabs">
-      <li class="active"><a href="javascript:;">Все</a></li>
-      <li><a href="javascript:;">Приложения</a></li>
-      <li><a href="javascript:;">Игры</a></li>
+    <ul class="tabs projects-tabs">
+      <li class="active" data-category="all"><a href="javascript:;">Все</a></li>
+      <li data-category="app"><a href="javascript:;">Приложения</a></li>
+      <li data-category="game"><a href="javascript:;">Игры</a></li>
     </ul>
     <div class="splide projects-slider">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
-          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
-          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
-          <li class="splide__slide">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide" data-category="app">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide" data-category="app">{% include 'components/projects-item.html' %}</li>
+          <li class="splide__slide" data-category="game">{% include 'components/projects-item-game.html' %}</li>
+          <li class="splide__slide" data-category="game">{% include 'components/projects-item-game.html' %}</li>
+          <li class="splide__slide" data-category="app">{% include 'components/projects-item.html' %}</li>
         </ul>
       </div>
     </div>

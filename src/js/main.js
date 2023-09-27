@@ -70,23 +70,67 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowNext = document.querySelector('.projects-next');
     const arrowPrev = document.querySelector('.projects-prev');
     const bar = document.querySelector('.projects-bar');
+    let projectsSlider;
+    let isEventsBound = false;
 
-    const projectsSlider = new Splide('.projects-slider', {
-      type: 'loop',
-      perPage: 2,
-      perMove: 1,
-      pagination: false,
-      arrows: false,
-      gap: 30,
-      breakpoints: {
-        1024: {
-          gap: 24,
+    function updateProgressBar() {
+      const end = projectsSlider.Components.Controller.getEnd() + 1;
+      const rate = Math.min((projectsSlider.index + 1) / end, 1);
+      bar.style.width = String(100 * rate) + '%';
+    }
+
+    function initializeSplide(slides) {
+      if (projectsSlider) {
+        if (isEventsBound) {
+          projectsSlider.off('mounted move', updateProgressBar);
+          isEventsBound = false;
+        }
+        projectsSlider.destroy(true);
+      }
+
+      const splideElement = document.querySelector('.projects-slider');
+      while (splideElement.firstChild) {
+        splideElement.removeChild(splideElement.lastChild);
+      }
+
+      const track = document.createElement('div');
+      track.className = 'splide__track';
+      const list = document.createElement('ul');
+      list.className = 'splide__list';
+
+      slides.forEach((slide) => {
+        list.appendChild(slide.cloneNode(true));
+      });
+
+      track.appendChild(list);
+      splideElement.appendChild(track);
+
+      projectsSlider = new Splide('.projects-slider', {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        pagination: false,
+        arrows: false,
+        gap: 30,
+        breakpoints: {
+          1024: {
+            gap: 24,
+          },
+          768: {
+            perPage: 1,
+          },
         },
-        768: {
-          perPage: 1,
-        },
-      },
-    });
+      });
+
+      projectsSlider.mount();
+
+      if (!isEventsBound) {
+        projectsSlider.on('mounted move', updateProgressBar);
+        isEventsBound = true;
+      }
+
+      updateProgressBar(); // Немедленно вызовите функцию после инициализации
+    }
 
     arrowNext.addEventListener('click', (e) => {
       projectsSlider.go('+1');
@@ -96,13 +140,27 @@ document.addEventListener('DOMContentLoaded', function () {
       projectsSlider.go('-1');
     });
 
-    projectsSlider.on('mounted move', function () {
-      const end = projectsSlider.Components.Controller.getEnd() + 1;
-      const rate = Math.min((projectsSlider.index + 1) / end, 1);
-      bar.style.width = String(100 * rate) + '%';
-    });
+    const allSlides = Array.from(document.querySelectorAll('.projects-slider .splide__slide'));
+    initializeSplide(allSlides);
 
-    projectsSlider.mount();
+    document.querySelectorAll('.projects-tabs li').forEach((tab) => {
+      tab.addEventListener('click', function () {
+        const category = this.getAttribute('data-category');
+
+        // Удаление и добавление активного класса
+        document.querySelector('.projects-tabs li.active').classList.remove('active');
+        this.classList.add('active');
+
+        bar.style.width = '0%'; // Установите прогресс полосы на 0 перед переключением табов
+
+        if (category === 'all') {
+          initializeSplide(allSlides);
+        } else {
+          const filteredSlides = allSlides.filter((slide) => slide.getAttribute('data-category') === category);
+          initializeSplide(filteredSlides);
+        }
+      });
+    });
   }
 
   if (document.querySelector('.media-slider')) {
