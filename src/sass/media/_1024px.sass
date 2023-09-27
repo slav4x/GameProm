@@ -5,7 +5,8 @@
   .title,
   .subscribe-text .title,
   .media-single .title,
-  .media-events .title
+  .media-events .title,
+  .feedback .title
     font-size: 64px
   .title-md
     font-size: 56px
@@ -220,3 +221,30 @@
       display: none
     &.full .media-item:nth-child(n+9)
       display: block
+
+  .feedback-label
+    width: 100%
+    flex: initial
+    padding: 0 24px
+    height: 80px
+    &:nth-child(1)
+      border-top-left-radius: 35px
+      border-top-right-radius: 35px
+    &:nth-child(3)
+      border-radius: 0
+    &-big
+      border-bottom-left-radius: 35px
+      border-bottom-right-radius: 35px
+      margin-bottom: 16px
+      padding-top: 14px
+      height: 140px
+  .feedback-textarea
+    &:focus,
+    &:valid
+      height: 60px
+
+  .feedback-name
+    padding: 0
+    gap: 8px
+  .feedback-text
+    font-size: 16px
