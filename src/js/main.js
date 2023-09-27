@@ -105,6 +105,12 @@ document.addEventListener('DOMContentLoaded', function () {
       arrows: false,
       gap: 30,
       focus: 'center',
+      breakpoints: {
+        1200: {
+          perPage: 2,
+          focus: false,
+        },
+      },
     });
 
     arrowNext.addEventListener('click', (e) => {
