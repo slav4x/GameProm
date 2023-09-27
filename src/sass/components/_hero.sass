@@ -29,6 +29,24 @@
   &-image
     position: absolute
     z-index: -1
-    top: 80px
+    top: calc(80px + 76px)
     right: 15px
-    width: 665px
+    width: 662px
+    height: 588px
+    background: #191919
+    border-radius: 35px
+    padding-top: 50px
+    @include flexbox
+    align-items: flex-start
+    justify-content: center
+    img
+      max-width: 490px
+  &-scroll
+    position: absolute
+    bottom: 0
+    left: 50px
+    width: 148px
+    height: 170px
+    background: url(../img/svg/scroll.svg) no-repeat center
+  .header-delimiter
+    display: block
