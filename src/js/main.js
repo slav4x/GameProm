@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
       pagination: false,
       arrows: false,
       gap: 30,
+      breakpoints: {
+        1024: {
+          gap: 24,
+        },
+      },
     });
 
     arrowNext.addEventListener('click', (e) => {
@@ -109,6 +114,9 @@ document.addEventListener('DOMContentLoaded', function () {
         1200: {
           perPage: 2,
           focus: false,
+        },
+        1024: {
+          gap: 24,
         },
       },
     });

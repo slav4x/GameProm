@@ -1,3 +1,159 @@
 @media(max-width: 1024px)
   .container
     max-width: 768px
+
+  .title,
+  .subscribe-text .title,
+  .media-single .title,
+  .media-events .title
+    font-size: 64px
+  .title-md
+    font-size: 56px
+  .subtitle
+    font-size: 32px
+
+  .header-nav
+    display: none
+  .header-lang
+    margin: 0 auto
+  .header
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      z-index: -1
+      left: 6px
+      right: 6px
+      top: 48px
+      height: 12px
+      background: var(--color-green)
+
+  .hero-title
+    font-size: 18px
+    max-width: 400px
+  .hero-title span
+    font-size: 42px
+  .hero-image img
+    max-width: 360px
+  .hero-content
+    padding-top: 80px
+  .hero-image
+    top: 115px
+  .hero
+    padding-bottom: 100px
+
+  .company-text p
+    font-size: 15px
+
+  .tabs
+    font-size: 18px
+    line-height: 20px
+    li
+      a
+        min-width: auto
+        border-width: 2px
+        padding: 14px 16px
+
+  .projects-head
+    margin-bottom: 24px
+  .projects-slider
+    margin: 24px 0 32px
+  .projects-item__gallery li
+    display: none
+    &:first-child
+      display: block
+      height: 300px
+  .projects-item__title
+    font-size: 22px
+  .projects-item__text
+    font-size: 14px
+  .projects-item__text p
+    margin-top: 8px
+  .projects-item__date
+    margin-top: 8px
+  .projects-footer
+    margin-top: 24px
+
+  .media-slider
+    margin: 24px 0 32px
+  .media-head
+    margin-bottom: 0
+  .media-footer
+    margin-top: 24px
+
+  .contact-content
+    max-width: 100%
+    width: 100%
+    @include flexbox
+    flex-direction: column
+    align-items: flex-start
+  .contact-logo
+    width: 345px
+    margin-bottom: 24px
+  .contact-social
+    order: 1
+    margin-bottom: 0
+    margin-top: 32px
+  .contact-email
+    font-size: 20px
+
+  .footer .container
+    flex-direction: column
+    align-items: flex-start
+    gap: 16px
+
+  .header-breadcrumbs
+    margin-bottom: 32px
+
+  .portfolio .title
+    margin-bottom: 24px
+  .portfolio-content
+    margin: 24px 0 32px
+    gap: 24px
+  .portfolio-item p
+    font-size: 22px
+    margin-top: 8px
+  .portfolio-item img
+    height: 220px
+    border-top-left-radius: 25px
+    border-top-right-radius: 25px
+  .portfolio-item span
+    top: 172px
+  .projects-item__gallery
+    border-radius: 0
+    border-top-left-radius: 25px
+    border-top-right-radius: 25px
+  .projects-item__gallery li:first-child
+    height: 220px
+
+  .media-grid
+    margin: 24px 0 32px
+    gap: 24px
+  .media-item
+    padding: 16px
+    border-radius: 25px
+  .media-item__date
+    margin-top: 8px
+  .media-item__title
+    font-size: 16px
+
+  .media-single .title
+    margin-bottom: 24px
+  .media-content
+    margin: 24px 0 32px
+    gap: 24px
+    grid-template-columns: repeat(2, 1fr)
+  .media-content li:nth-child(n+9)
+    display: none
+
+  .portfolio-about p
+    font-size: 16px
+  .portfolio-about__gallery
+    gap: 24px
+  .portfolio-about__gallery li
+    height: 220px
+  .portfolio-about__gallery img
+    border-radius: 25px
+
+  .portfolio-updates__grid
+    grid-template-columns: repeat(2, 1fr)
