@@ -1,7 +1,7 @@
 .header
   padding-top: 80px
   @include flexbox
-  align-items: center
+  align-items: flex-start
   &-logo
     display: block
     width: 60px
@@ -47,6 +47,7 @@
     align-items: center
     gap: 16px
     margin-left: auto
+    margin-right: 16px
     li
       a
         @include flexbox
@@ -76,3 +77,40 @@
       &::after
         content: "/"
         padding: 0 4px
+  &-lang
+    height: 60px
+    @include flexbox
+    align-items: center
+    border-radius: 99px
+    background: #fff
+    color: var(--color-black)
+    font-size: 18px
+    font-weight: 500
+    text-transform: uppercase
+    padding: 0 32px
+    gap: 16px
+    margin-left: 16px
+    li
+      opacity: 0.5
+      &.active
+        opacity: 1
+  &-delimiter
+    height: 76px
+    width: 200px
+    border-top-left-radius: 35px
+    border-top-right-radius: 35px
+    background: #191919
+    position: relative
+    display: none
+    &::before, &::after
+      content: ''
+      position: absolute
+      width: 35px
+      height: 35px
+      bottom: 0
+      background: var(--corner)
+    &::before
+      left: -35px
+    &::after
+      right: -35px
+      transform: rotate(90deg)
