@@ -55,6 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
         autoScroll: {
           speed: 0.5,
         },
+        breakpoints: {
+          768: {
+            destroy: true,
+          },
+        },
       });
 
       companySlider.mount(window.splide.Extensions);
@@ -76,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
       breakpoints: {
         1024: {
           gap: 24,
+        },
+        768: {
+          perPage: 1,
         },
       },
     });
@@ -117,6 +125,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         1024: {
           gap: 24,
+        },
+        768: {
+          perPage: 1,
         },
       },
     });
