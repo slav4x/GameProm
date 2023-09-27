@@ -23,11 +23,10 @@
     padding: 0
     font-size: 18px
     font-weight: 500
-    text-transform: uppercase
     padding-left: 48px
     padding-right: 100px
     @include placeholder
-      color: var(--color-white)
+      color: rgba(255,255,255,.4)
       font-size: 24px
   &-btn
     position: absolute
@@ -39,3 +38,19 @@
     background: var(--color-white) url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1489' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1489)'%3E%3Cpath d='M8.72183 24.6219L6.2334 22.1334L18.6001 9.7668H7.75517V6.2334H24.6219V23.1001H21.0885V12.2552L8.72183 24.6219Z' fill='%231F1F1F'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat center
     border: 0
     cursor: pointer
+    transition: .25s
+    &.error
+      background: #FF2525 url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1489' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1489)'%3E%3Cpath d='M8.72183 24.6219L6.2334 22.1334L18.6001 9.7668H7.75517V6.2334H24.6219V23.1001H21.0885V12.2552L8.72183 24.6219Z' fill='%23FFFFFF'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat center
+    &.success
+      background: var(--color-green) url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_179_1489' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_179_1489)'%3E%3Cpath d='M8.72183 24.6219L6.2334 22.1334L18.6001 9.7668H7.75517V6.2334H24.6219V23.1001H21.0885V12.2552L8.72183 24.6219Z' fill='%231F1F1F'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat center
+  &-message
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    color: var(--color-white)
+    left: 48px
+    margin: auto 0
+    font-size: 14px
+    line-height: 14px
+    height: 14px
