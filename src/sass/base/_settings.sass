@@ -149,7 +149,6 @@ input
   li
     padding-left: 26px
     position: relative
-    color: var(--color-white)
     &::before
       content: ''
       position: absolute
@@ -160,8 +159,6 @@ input
       height: 12px
       margin: auto 0
       background: var(--color-green)
-      border-top: 1px solid var(--color-green)
-      border-bottom: 1px solid var(--color-green)
     a
       @include flexbox
       justify-content: center
@@ -169,11 +166,12 @@ input
       padding: 18px 24px
       border-radius: 999px
       background: var(--color-black)
-      border: 1px solid var(--color-green)
-    &.active
+      border: 2px solid var(--color-green)
+      color: var(--color-white)
+      transition: .25s
+    &.active a
+      background: var(--color-green)
       color: var(--color-black)
-      a
-        background: var(--color-green)
     &:first-child
       padding-left: 0
       &::before
